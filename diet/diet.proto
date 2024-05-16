@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package diet;
+
+service DietService {
+  rpc GetDiet (GetDietRequest) returns (GetDietResponse);
+  rpc CreateDiet (CreateDietRequest) returns (CreateDietResponse);
+  rpc UpdateDiet (UpdateDietRequest) returns (UpdateDietResponse);
+  rpc DeleteDiet (DeleteDietRequest) returns (DeleteDietResponse);
+}
+
+message Diet {
+  string id = 1;
+  string title = 2;
+  string description = 3;
+  string userId = 4;
+}
+
+message GetDietRequest {
+  string id = 1;
+}
+
+message GetDietResponse {
+  Diet diet = 1;
+}
+
+message CreateDietRequest {
+  string title = 1;
+  string description = 2;
+  string userId = 3;
+}
+
+message CreateDietResponse {
+  Diet diet = 1;
+}
+
+message UpdateDietRequest {
+  string id = 1;
+  string title = 2;
+  string description = 3;
+  string userId = 4;
+}
+
+message UpdateDietResponse {
+  Diet diet = 1;
+}
+
+message DeleteDietRequest {
+  string id = 1;
+}
+
+message DeleteDietResponse {
+  Diet diet = 1;
+}

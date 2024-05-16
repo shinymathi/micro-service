@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package exercise;
+
+service ExerciseService {
+  rpc GetExercise (GetExerciseRequest) returns (GetExerciseResponse);
+  rpc CreateExercise (CreateExerciseRequest) returns (CreateExerciseResponse);
+  rpc UpdateExercise (UpdateExerciseRequest) returns (UpdateExerciseResponse);
+  rpc DeleteExercise (DeleteExerciseRequest) returns (DeleteExerciseResponse);
+}
+
+message Exercise {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string workoutId = 4;
+}
+
+message GetExerciseRequest {
+  string id = 1;
+}
+
+message GetExerciseResponse {
+  Exercise exercise = 1;
+}
+
+message CreateExerciseRequest {
+  string name = 1;
+  string description = 2;
+  string workoutId = 3;
+}
+
+message CreateExerciseResponse {
+  Exercise exercise = 1;
+}
+
+message UpdateExerciseRequest {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string workoutId = 4;
+}
+
+message UpdateExerciseResponse {
+  Exercise exercise = 1;
+}
+
+message DeleteExerciseRequest {
+  string id = 1;
+}
+
+message DeleteExerciseResponse {
+  Exercise exercise = 1;
+}
